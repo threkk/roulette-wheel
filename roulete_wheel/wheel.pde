@@ -4,7 +4,7 @@ class Section {
   PShape section;
   
   private final float INCR = 0.0005; 
-  
+
   Section(float centerx, float centery, float firstpx, float firstpy, float percentage) {
     points = new float[4];
     points[0] = centerx;
@@ -22,12 +22,12 @@ class Section {
     return point;
   }
   
-  public PShape getPShape(int stroke, int r, int g, int b) {
+  public PShape getPShape(int stroke, Colour colour) {
     if (section == null) {      
       section = createShape();
       section.beginShape();
       section.stroke(stroke);
-      section.fill(colour);
+      section.fill(colour.r, colour.g, colour.b);
       section.vertex(points[0],points[1]);
 
       for(float i = 0.0; i < percentage; i += INCR) {
@@ -43,8 +43,17 @@ class Section {
     }
   }
   
+  public PShape getPShape(int stroke, int r, int g, int b) {
+    Colour colour = new Colour(r,g,b);
+    return getPShape(stroke, colour);
+  }
+  
   public float[] getFinalPoint() {
     float[] finalPoint = calculateVertex(percentage);
     return finalPoint; 
  }
+}
+
+class Wheel {
+  
 }

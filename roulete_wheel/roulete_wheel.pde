@@ -13,17 +13,9 @@ void setup() {
 
 void draw() {
   fill(255,255,255);
-  /*ellipse(ax, ay, 200,200);
 
-  
-  cx = (bx - ax) * cos(TWO_PI * 0.25) - (by - ay) * sin(TWO_PI * 0.25) + ax;
-  cy = (bx - ax) * sin(TWO_PI * 0.25) + (by - ay) * cos(TWO_PI * 0.25) + ay;
-  stroke(255,0,0);
-  line(ax,ay,bx,by);
-  line(ax,ay,cx,cy);
-  fill(255,255,255);*/
-  PShape section1 = s1.getPShape(0,100);
-  PShape section2 = s2.getPShape(0,200);
+  PShape section1 = s1.getPShape(0, Colour.LIGHT_RED);
+  PShape section2 = s2.getPShape(0, 255,255,0);
   shape(section1);
   shape(section2);
   
