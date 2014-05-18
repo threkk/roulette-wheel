@@ -13,6 +13,12 @@ class Colour {
   public static final Colour LIGHT_RED = new Colour(255,68,68);
   public static final Colour DARK_RED = new Colour(204,0,0);
   
+  public static final Colour[] ALL = {LIGHT_BLUE, DARK_PURPLE, 
+                                      LIGHT_GREEN, DARK_ORANGE, 
+                                      LIGHT_RED, DARK_BLUE,
+                                      LIGHT_PURPLE, DARK_GREEN, 
+                                      LIGHT_ORANGE, DARK_RED};
+  
   public final int r, g, b;
   
   public Colour(int r, int g, int b) {

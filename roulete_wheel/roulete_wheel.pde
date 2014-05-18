@@ -1,23 +1,24 @@
-float ax, ay, bx, by, cx, cy;
-Section s1,s2;
+float ax, ay, bx, by;
+Wheel wheel;
+
 void setup() {
   size(960, 640, P2D);
   background(255,255,255);
+  smooth();
   ax = width/2;
   ay = height/2;
-  bx = ax + 100;
+  bx = ax + 50;
   by = ay;
-  s1 = new Section(ax,ay,bx,by,0.25);
-  s2 = new Section(ax,ay,s1.getFinalPoint()[0],s1.getFinalPoint()[1],0.25);
+  float[] per = {0.10,0.20,0.30,0.40,0.5,0.6,0.7,0.8,0.9,1};
+  wheel = new Wheel(ax,ay,bx,bx,per);
+ 
 }
 
 void draw() {
   fill(255,255,255);
 
-  PShape section1 = s1.getPShape(0, Colour.LIGHT_RED);
-  PShape section2 = s2.getPShape(0, 255,255,0);
-  shape(section1);
-  shape(section2);
+  shape(wheel.getWheel());
+  for(int i = 0; i < wheel.sections.length; i++) wheel.setText("Label", i);
   
 }
 
